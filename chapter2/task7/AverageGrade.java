@@ -1,12 +1,10 @@
-package exercises.average_grade;
-
 import textio.TextIO;
 /**
  * AverageGrade
  */
 public class AverageGrade {
     public static void main(String[] args) {
-        TextIO.readFile("exercises/average_grade/testdata.txt");
+        TextIO.readFile("testdata.txt");
         String studentName = TextIO.getln();
         double total;
         int score;
