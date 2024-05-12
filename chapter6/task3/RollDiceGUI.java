@@ -19,7 +19,7 @@ public class RollDiceGUI extends Application {
 
     private final int sizeCanvas = 100;
     private final double sizeDie = 35;
-    private final double diamDot = 10;
+    private final double diamDot = 9;
     private GraphicsContext g;
     private Canvas canvas;
     private int firstDie;
@@ -73,40 +73,20 @@ public class RollDiceGUI extends Application {
         g.fillRect(x, y, sizeDie, sizeDie);
         g.strokeRect(x, y, sizeDie, sizeDie);
         g.setFill(Color.BLACK);
-        switch (val) {
-            case 1 -> {
-                drawMiddleDot(x, y);
-            }
-            case 2 -> {
-                drawUpperLeftDot(x, y);
-                drawLowerRightDot(x, y);
-            }
-            case 3 -> {
-                drawUpperLeftDot(x, y);
-                drawMiddleDot(x, y);
-                drawLowerRightDot(x, y);
-            }
-            case 4 -> {
-                drawUpperLeftDot(x, y);
-                drawUpperRightDot(x, y);
-                drawLowerLeftDot(x, y);
-                drawLowerRightDot(x, y);
-            }
-            case 5 -> {
-                drawUpperLeftDot(x, y);
-                drawUpperRightDot(x, y);
-                drawLowerLeftDot(x, y);
-                drawLowerRightDot(x, y);
-                drawMiddleDot(x, y);
-            }
-            default -> {
-                drawUpperLeftDot(x, y);
-                drawUpperRightDot(x, y);
-                drawLowerLeftDot(x, y);
-                drawLowerRightDot(x, y);
-                drawUpperCenterDot(x, y);
-                drawLowerCenterDot(x, y);
-            }
+        if (val % 2 == 1) {
+            drawMiddleDot(x, y);
+        }
+        if (val > 1) {
+            drawUpperLeftDot(x, y);
+            drawLowerRightDot(x, y);
+        }
+        if (val > 3) {
+            drawUpperRightDot(x, y);
+            drawLowerLeftDot(x, y);
+        }
+        if (val == 6) {
+            drawUpperCenterDot(x, y);
+            drawLowerCenterDot(x, y);
         }
     }
 
