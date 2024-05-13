@@ -23,6 +23,7 @@ public class RollDiceGUI extends Application {
     private final double diamDot = 9;
     private GraphicsContext g;
     private Canvas canvas;
+    private Button reRoll;
     private int firstDie;
     private int secondDie;
     private static int firstCoord = 10;
@@ -44,7 +45,7 @@ public class RollDiceGUI extends Application {
         g.setFill(Color.LIGHTBLUE);
         g.fillRect(0, 0, sizeCanvas, sizeCanvas);
         draw();
-        Button reRoll = new Button("Reroll!");
+        reRoll = new Button("Reroll!");
         animator = new AnimationTimer() {
             long previousFrameTime;
             public void handle( long time ) {
@@ -56,6 +57,7 @@ public class RollDiceGUI extends Application {
             }
         };
         reRoll.setOnAction( e -> {
+            reRoll.setDisable(true);
             animator.start();
             frameNumber = 0;
         });
@@ -83,8 +85,10 @@ public class RollDiceGUI extends Application {
         secondDie = (int) (Math.random() * 6 + 1);
         drawDie(firstDie, firstCoord, firstCoord);
         drawDie(secondDie, secondCoord, secondCoord);
-        if (frameNumber > 15)
+        if (frameNumber > 15) {
+            reRoll.setDisable(false);
             animator.stop();
+        }
     }
 
     /**
