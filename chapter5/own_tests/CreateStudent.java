@@ -1,4 +1,4 @@
-package exercises.chapter5.own_tests;
+package chapter5.own_tests;
 /**
  * CreateStudent
  */
