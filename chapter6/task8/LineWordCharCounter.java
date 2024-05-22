@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 public class LineWordCharCounter extends Application{
 
     private TextArea userInput;
+    // Labels for outputting calculated values
     private Label linesNumber = createBoldLabel("");
     private Label wordsNumber = createBoldLabel("");
     private Label charsNumber = createBoldLabel("");
@@ -52,6 +53,10 @@ public class LineWordCharCounter extends Application{
         stage.show();
     }
 
+    /*
+     * Business logic. Count words, lines, characters. Save values in
+     * global variables and change labels accordingly.
+     */
     private void calculate() {
         String input = userInput.getText();
         int length = input.length();
@@ -62,6 +67,10 @@ public class LineWordCharCounter extends Application{
             if (c == '\n') {
                 lines++;
             }
+            /*
+             * Logic: count a word if we have a letter and it is the last in the input
+             * or we have got not a letter as next character
+             */
             if ( Character.isLetter(c) && ( (i == length - 1) || (!Character.isLetter(input.charAt(i + 1))) ) ) {
                 words++;
             }
@@ -71,12 +80,21 @@ public class LineWordCharCounter extends Application{
         charsNumber.setText(String.valueOf(length));
     }
 
+    /**
+     * Utility method for creating Label with bolder serif font 15px size
+     * @param text Text in the label
+     */
     private Label createBoldLabel(String text) {
         Label label = new Label(text);
         label.setStyle("-fx-font-family: serif; -fx-font-size: 15; -fx-font-weight: bolder");
         return label;
     }
-
+    /**
+     * Utility method for creating HBox object with white background.
+     * Width between child nodes are 5px.
+     * Padding 5px top, bottom, 10px left.
+     * @param args array of Nodes that will be added in HBox
+     */
     private HBox createWhiteBox(Node... args) {
         HBox box = new HBox(5, args);
         box.setBackground(Background.fill(Color.WHITE));
