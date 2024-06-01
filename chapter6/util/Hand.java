@@ -1,3 +1,4 @@
+package chapter6.util;
 
 /**
  * An object of type Hand represents a hand of cards.  The

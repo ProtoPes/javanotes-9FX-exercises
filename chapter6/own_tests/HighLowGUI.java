@@ -1,3 +1,4 @@
+package chapter6.own_tests;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -11,6 +12,9 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
+import chapter6.util.Card;
+import chapter6.util.Deck;
+import chapter6.util.Hand;
 /**
  * This class implements a simple card game.  The user sees a card 
  * and tries to predict whether the next card will be higher or 
@@ -19,7 +23,7 @@ import javafx.scene.text.Font;
  * user loses.
  * 
  * This class depends on several additional source code files:
- * Card.java, Hand.jave, Deck.java, and cards.png. 
+ * Card.java, Hand.java, Deck.java, and cards.png. 
  */
 public class HighLowGUI extends Application {
 
