@@ -15,16 +15,17 @@ import javafx.scene.text.Font;
 import chapter6.util.BlackjackHand;
 import chapter6.util.Card;
 import chapter6.util.Deck;
+
 /**
  * This class implements a BlackJack game. The rules as in casino:
- * First 2 cards dealt to each hand. If someone has 21 - he wons immediately.
+ * First 2 cards dealt to each hand. If someone has 21 - he won immediately.
  * Then each player can deal more cards to score more points.
  * If total score will be more 21 points - that player loses automatically.
  * If a player could take 5 cards without going over 21 - he won.
  * Dealer always wins on ties.
  *
  * This class depends on several additional source code files:
- * Card.java, Hand.jave, Deck.java, and cards.png. 
+ * Card.java, BlackjackHand.java, Deck.java, and cards.png.
  */
 public class BlackJackGUI extends Application {
 
@@ -57,8 +58,8 @@ public class BlackJackGUI extends Application {
     
     /**
      * The start() method sets up the GUI and event handling. The root pane is
-     * is a BorderPane. A canvas where cards are displayed occupies the center 
-     * position of the BorderPane.  On the bottom is a HBox that holds three buttons.  
+     * is a BorderPane. A canvas where cards are displayed occupies the center
+     * position of the BorderPane.  On the bottom is a HBox that holds three buttons.
      * ActionEvent handlers are set up to call methods defined elsewhere
      * in this class when the user clicks a button.
      */
