@@ -1,4 +1,4 @@
-package exercises.chapter5;
+package chapter5.task2;
 /** 
  * An object of class StatCalc can be used to compute several simple statistics
  * for a set of numbers.  Numbers are entered into the dataset using

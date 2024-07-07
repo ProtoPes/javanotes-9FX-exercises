@@ -1,3 +1,4 @@
+package chapter5.own_tests;
 
 import javafx.application.Application;
 import javafx.scene.layout.BorderPane;

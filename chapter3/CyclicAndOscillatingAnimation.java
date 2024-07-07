@@ -1,4 +1,4 @@
-package exercises.chapter3;
+package chapter3;
 
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
